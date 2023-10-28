@@ -12,11 +12,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val txtRecognition:Button=findViewById(R.id.txtRecognition)
+        val imgRecognition:Button=findViewById(R.id.imgRecognition)
 
         txtRecognition.setOnClickListener{
             val intent=Intent(this,TextRecognition::class.java)
             startActivity(intent)
-            finish()
+
+        }
+
+        imgRecognition.setOnClickListener{
+            val intent=Intent(this,ImageRecognitionActivity::class.java)
+            startActivity(intent)
+
         }
     }
 }

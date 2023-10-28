@@ -21,7 +21,7 @@ class TextRecognition : AppCompatActivity() {
     private lateinit var textRecognizer: TextRecognizer
     private val tag:String?="TextRecognition"
     private lateinit var txtViewResult:TextView
-    private lateinit var surface_camera_preview:SurfaceView
+    lateinit var surface_camera_preview:SurfaceView
     val keyResult: String = "key_result"
     private val MY_PERMISSIONS_REQUEST_CAMERA: Int = 101
 
@@ -97,14 +97,14 @@ class TextRecognition : AppCompatActivity() {
     private fun requestForPermission() {
 
         if (ContextCompat.checkSelfPermission(this@TextRecognition,
-                Manifest.permission.CAMERA)
+                android.Manifest.permission.CAMERA)
             !=PackageManager.PERMISSION_GRANTED){
             if (ActivityCompat.shouldShowRequestPermissionRationale(this@TextRecognition,
-                    Manifest.permission.CAMERA)){
+                    android.Manifest.permission.CAMERA)){
 
             }else{
                 ActivityCompat.requestPermissions(this@TextRecognition,
-                    arrayOf(Manifest.permission.CAMERA),
+                    arrayOf(android.Manifest.permission.CAMERA),
                     MY_PERMISSIONS_REQUEST_CAMERA)
             }
         }else{
@@ -115,7 +115,7 @@ class TextRecognition : AppCompatActivity() {
     private fun isCameraPermissionGranted(): Boolean {
         return ContextCompat.checkSelfPermission(
             this@TextRecognition,
-            Manifest.permission.CAMERA
+            android.Manifest.permission.CAMERA
         ) == PackageManager.PERMISSION_GRANTED
     }
 
