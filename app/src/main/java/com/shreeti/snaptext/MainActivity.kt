@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         txtRecognition.setOnClickListener{
             val intent=Intent(this,TextRecognition::class.java)
             startActivity(intent)
+            finish()
 
         }
 
